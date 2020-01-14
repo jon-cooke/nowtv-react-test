@@ -49,3 +49,7 @@ Noticed you used connnected-react-router :)
     1. reducers/messages.js has a bug - it should only set the state to the action payload if the action is MESSAGES_LOADED. It actually sets the state to the payload of the last action dispatched. Add a test & fix. 
 
     2. Think about rendering messages. Decide to create a message component. Add a components directory. Add message.js. Test message.js exports a function. Add a snapshot test, for now just render stringified props. Add a second snapshot test to home.test.js for a list with one message. Use message.id for the key prop, it's a UUID so this should be safe.
+
+2. Sort the messages by time.
+
+    1. In the absence of additional sorting requirements, the most expedient way  to do this is in the reducer, so implement it there. The timestamps are all UTC in ISO format, so a lexical sort is sufficient here. I'll need a function that compares two objects using one of their properties. Create a utils folder for that, and implement in comparator.js.
