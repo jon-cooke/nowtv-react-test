@@ -55,3 +55,9 @@ Noticed you used connnected-react-router :)
     1. In the absence of additional sorting requirements, the most expedient way  to do this is in the reducer, so implement it there. The timestamps are all UTC in ISO format, so a lexical sort is sufficient here. I'll need a function that compares two objects using one of their properties. Create a utils folder for that, and implement in comparator.js.
 
     2. Modify the messages reducer to sort the payload. Use the same comparator function in the test to sort the test data.
+
+3. Display and format the timstamp of the message to be human readable.
+
+    1. First, change the Message component to render markup instead of JSON. Update snapshot.
+
+    2. I chose to do this expediently with vanilla JS and convert the ISO string to a human readable date string using toLocaleString. Update the snapshot. This satisfies the requirements, but there are a few loose ends here worth talking about.
