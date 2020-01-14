@@ -3,12 +3,12 @@
 exports[`renders correctly 1`] = `
 <div>
   <div>
-    cd445e6d-e514-424f-ba8f-16ec842002c6
-  </div>
-  <div>
-    fe27b760-a915-475c-80bb-7cdf14cc6ef3
-  </div>
-  <div>
+    <img
+      alt="Albert Rose"
+      height={100}
+      src="http://dummyimage.com/100x100.jpg/5fa2dd/ffffff"
+      width={100}
+    />
     Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.
   </div>
   <div>
