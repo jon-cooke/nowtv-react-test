@@ -17,6 +17,15 @@ describe('messages reducer', () => {
     },
   ];
 
+  it('should return the state unchanged if the action is not recognized', () => {
+    const state = [];
+    const action = {
+      type: 'TEST',
+      payload: {},
+    };
+    expect(messages(state, action)).toBe(state);
+  });
+
   it('should set messages on messages loaded', () => {
     expect(
       messages([], {

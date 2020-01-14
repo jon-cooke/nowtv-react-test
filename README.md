@@ -34,3 +34,16 @@ Do not modify `data.js` to achieve these tasks, and do not worry about the styli
 ## Submission
 
 Please upload your solution to your github account as a public repository, and send the URL to us.
+
+## Report
+
+0. Install deps and sanity check
+
+I'm using Windows. Used `npm install` instead of installing yarn.
+Installed deps from git bash. App runs, but jest broken as it's trying to glob unix paths.
+Reinstalled deps from git cmd, jest runs.
+Noticed you used connnected-react-router :)
+
+1. Render the list of messages from the redux store
+
+    1. reducers/messages.js has a bug - it should only set the state to the action payload if the action is MESSAGES_LOADED. It actually sets the state to the payload of the last action dispatched. Add a test & fix.
