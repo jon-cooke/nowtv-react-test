@@ -1,7 +1,10 @@
 import messages from './messages';
+import comparator from '../utils/comparator';
+
 import { MESSAGES_LOADED } from '../action-creators/action-types';
 
 describe('messages reducer', () => {
+  // the messages must not be in timestamp order
   const messagesPayload = [
     {
       id: 'cd445e6d-e514-424f-ba8f-16ec842002c6',
@@ -17,6 +20,8 @@ describe('messages reducer', () => {
     },
   ];
 
+  const sortedMessages = messagesPayload.slice(0).sort(comparator('timestamp'));
+
   it('should return the state unchanged if the action is not recognized', () => {
     const state = [];
     const action = {
@@ -26,12 +31,12 @@ describe('messages reducer', () => {
     expect(messages(state, action)).toBe(state);
   });
 
-  it('should set messages on messages loaded', () => {
+  it('should set messages on MESSAGES_LOADED and sort them by timestamp', () => {
     expect(
       messages([], {
         type: MESSAGES_LOADED,
         payload: messagesPayload,
       })
-    ).toEqual(messagesPayload);
+    ).toEqual(sortedMessages);
   });
 });

@@ -53,3 +53,5 @@ Noticed you used connnected-react-router :)
 2. Sort the messages by time.
 
     1. In the absence of additional sorting requirements, the most expedient way  to do this is in the reducer, so implement it there. The timestamps are all UTC in ISO format, so a lexical sort is sufficient here. I'll need a function that compares two objects using one of their properties. Create a utils folder for that, and implement in comparator.js.
+
+    2. Modify the messages reducer to sort the payload. Use the same comparator function in the test to sort the test data.
