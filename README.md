@@ -61,3 +61,7 @@ Noticed you used connnected-react-router :)
     1. First, change the Message component to render markup instead of JSON. Update snapshot.
 
     2. I chose to do this expediently with vanilla JS and convert the ISO string to a human readable date string using toLocaleString. Update the snapshot. This satisfies the requirements, but there are a few loose ends here worth talking about.
+
+4. Display the avatar of the user next to the message
+
+    1. Think about how to fetch and join the data. There are a few options here. Idiomatic redux would be to create a seperate state for members and use a selector (with memoization) to join to messages. With limited time, I decide instead to modify loadMessages to additionally fetch members and add a reference to each message pointing at the correct member. This avoids dealing with races in the Home container. Realise that the Home component triggering the loading of messages is not tested! Realise also that loadMessages is not tested either! Proceed anyway, due to limited time. This seems like something that should be implemented server side with GraphQL or similar. Commited without tests, time is limited.
