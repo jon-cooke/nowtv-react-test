@@ -1,18 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div>
-  <div>
-    <img
-      alt="Albert Rose"
-      height={100}
-      src="http://dummyimage.com/100x100.jpg/5fa2dd/ffffff"
-      width={100}
-    />
-    Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.
+<Message
+  id="cd445e6d-e514-424f-ba8f-16ec842002c6"
+  message="Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla."
+  timestamp="2017-02-09T04:27:38Z"
+  user={
+    Object {
+      "avatar": "http://dummyimage.com/100x100.jpg/5fa2dd/ffffff",
+      "email": "arosec@bbb.org",
+      "firstName": "Albert",
+      "id": "fe27b760-a915-475c-80bb-7cdf14cc6ef3",
+      "ip": "20.79.231.223",
+      "lastName": "Rose",
+    }
+  }
+  userId="fe27b760-a915-475c-80bb-7cdf14cc6ef3"
+>
+  <div
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  >
+    <div>
+      <img
+        alt="Albert Rose"
+        height={100}
+        src="http://dummyimage.com/100x100.jpg/5fa2dd/ffffff"
+        width={100}
+      />
+      Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.
+    </div>
+    <div>
+      2/9/2017, 4:27:38 AM
+    </div>
   </div>
-  <div>
-    2/9/2017, 4:27:38 AM
-  </div>
-</div>
+</Message>
 `;

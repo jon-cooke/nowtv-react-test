@@ -1,15 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Message = ({ user, message, timestamp }) => (
-  <div>
-    <div>
-      <img src={user.avatar} alt={`${user.firstName} ${user.lastName}`} width={100} height={100} />
-      {message}
+const Message = ({ user, message, timestamp }) => {
+  const [showEmail, setShowEmail] = React.useState(false);
+  return (
+    <div onMouseOver={() => setShowEmail(true)} onMouseOut={() => setShowEmail(false)}>
+      <div>
+        <img src={user.avatar} alt={`${user.firstName} ${user.lastName}`} width={100} height={100} />
+        {message}
+      </div>
+      <div>{new Date(timestamp).toLocaleString()}</div>
+      {showEmail && <div>{user.email}</div>}
     </div>
-    <div>{new Date(timestamp).toLocaleString()}</div>
-  </div>
-);
+  );
+};
 
 const userType = {
   id: PropTypes.string,
