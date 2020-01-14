@@ -73,3 +73,11 @@ Noticed you used connnected-react-router :)
     1. It's been a while since i did anything involving hover with Javascript, it being a mobile first world these days. I know I'll need a mouseOver handler, which means I'll need to test it. I've not tested a mouseOver with Enzyme before, check the docs, it looks straightforward. Decide to spike first, implementing with hooks. Quickly realise I need to update React to use them. Dither for a bit. Decide to update and see if the spike flies or burns, but resolve to step back and refactor to a class component if it doesn't fly quickly. Update React and ReactDom to ^16.8.0 and am pleased to see the spike works. The enzyme shallow render can't handle hooks, so I change the snapshot to use mount as the result is equivilant anyway. All tests pass. 
 
     2. Time to tests the behaviour. Add a test to verify the email is not rendered by default, then modify the component to do that to verify it fails. Next, add a test that renders and simulates a mouseover and checks the email is renders. Unable to make this pass against the spike. Enzyme is not updating the tree. Break for a while. Figure out that tree.debug shows out of date nodes, but tree.text for some reason works. Finally able to test, although not entirely happy as the tests here feel like they are brittle. Decide to check with some console.log that the final test really does fire the event handlers. It does :). Tidy up the mess and make the final code commit.
+
+## Afterthoughts
+
+I should perhaps have considered the React version before starting, I could have saved time by using class+state instead of hooks.
+
+I think Enzyme now creates more problems than it solves, and I'd have avoided if it wasn't already being used.
+
+The update to React 16.8.0 broke placeholder image dimensions and rendered visible alt text.
