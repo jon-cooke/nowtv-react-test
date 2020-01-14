@@ -46,4 +46,6 @@ Noticed you used connnected-react-router :)
 
 1. Render the list of messages from the redux store
 
-    1. reducers/messages.js has a bug - it should only set the state to the action payload if the action is MESSAGES_LOADED. It actually sets the state to the payload of the last action dispatched. Add a test & fix.
+    1. reducers/messages.js has a bug - it should only set the state to the action payload if the action is MESSAGES_LOADED. It actually sets the state to the payload of the last action dispatched. Add a test & fix. 
+
+    2. Think about rendering messages. Decide to create a message component. Add a components directory. Add message.js. Test message.js exports a function. Add a snapshot test, for now just render stringified props. Add a second snapshot test to home.test.js for a list with one message. Use message.id for the key prop, it's a UUID so this should be safe.

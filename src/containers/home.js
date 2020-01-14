@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { loadMessages } from '../action-creators/messages';
+import Message from '../components/message';
 
 class Home extends React.Component {
   componentDidMount() {
@@ -10,7 +11,13 @@ class Home extends React.Component {
   }
 
   render() {
-    return <div>This is Test</div>;
+    return (
+      <div>
+        {this.props.messages.map(message => (
+          <Message key={message.id} {...message} />
+        ))}
+      </div>
+    );
   }
 }
 
@@ -22,6 +29,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({ loadMessages }, disp
 
 Home.propTypes = {
   loadMessages: PropTypes.func,
+  messages: PropTypes.array,
 };
 
 export default connect(
